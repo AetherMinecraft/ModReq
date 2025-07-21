@@ -1,0 +1,25 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.debug.settings.onBuildFailureProceed": true,
+  "java.maven.downloadSources": true,
+  "java.saveActions.organizeImports": true,
+  "java.sources.organizeImports.staticStarThreshold": 99,
+  "java.sources.organizeImports.starThreshold": 99,
+  "java.import.maven.enabled": true,
+  "java.import.gradle.enabled": false,
+  "java.project.sourcePaths": [
+    "src/main/java"
+  ],
+  "java.project.referencedLibraries": [],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/target": true
+  }
+}

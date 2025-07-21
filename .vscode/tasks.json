@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Maven: Reload Dependencies",
+			"type": "shell",
+			"command": "${workspaceFolder}/mvnw.cmd",
+			"args": [
+				"dependency:resolve",
+				"-U"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Maven: Clean Compile",
+			"type": "shell",
+			"command": "${workspaceFolder}/mvnw.cmd",
+			"args": [
+				"clean",
+				"compile"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Maven: Package",
+			"type": "shell",
+			"command": "${workspaceFolder}/mvnw.cmd",
+			"args": [
+				"clean",
+				"package"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

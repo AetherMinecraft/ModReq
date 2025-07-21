@@ -1,0 +1,57 @@
+# ModReq Configuration File
+# Configure your ModReq plugin settings here
+
+# Database Configuration
+database:
+  type: "h2" # Options: h2, mysql
+  host: "localhost"
+  port: 3306
+  database: "modreq"
+  username: "root"
+  password: ""
+  # H2 specific settings (ignored for MySQL)
+  file: "modreq.db"
+
+# Discord Integration
+discord:
+  enabled: true # Enable or disable Discord integration
+  webhook_url: "" # Set your Discord webhook URL here
+  opened_embed_color: "#00FF00" # Hex color for Discord embeds
+  elevated_embed_color: "#0000FF" # Hex color for elevated requests
+  done_embed_color: "#FFFF00" # Hex color for completed requests
+  closed_embed_color: "#303030" # Hex color for closed requests
+
+# General Settings
+settings:
+  # Maximum number of open requests per player
+  max_requests_per_player: 5
+  # Auto-close requests after X days (0 to disable)
+  auto_close_days: 30
+  # Enable location saving for requests
+  save_location: true
+  # Broadcast new requests to staff
+  broadcast_to_staff: true
+  # Maximum length of request descriptions
+  max_description_length: 500
+  # Maximum length of notes
+  max_note_length: 200
+  # Maximum results per page in list commands
+  list_page_size: 10
+
+# Messages (supports both legacy &-codes and modern MiniMessage format)
+messages:
+  # Legacy format (backwards compatible)
+  request_filed: "&aYour mod request has been filed! Request ID: &e#{id}"
+  request_claimed: "&eRequest #{id} has been claimed by &b{staff}"
+  request_closed: "&aRequest #{id} has been marked as completed"
+  no_permission: "&cYou don't have permission to do that!"
+  request_not_found: "&cRequest not found!"
+  max_requests_reached: "&cYou have reached the maximum number of open requests ({max})"
+  request_too_long: "&cYour request description is too long! Maximum {max} characters."
+  note_added: "&aNote added to request #{id}"
+  request_already_claimed: "&cRequest #{id} is already claimed by {staff}"
+  request_already_closed: "&cRequest #{id} is already closed"
+  database_error: "&cA database error occurred. Please try again later."
+
+  # Modern MiniMessage format examples (you can use either style)
+  # request_filed: "<green>Your mod request has been filed! Request ID: <yellow>#{id}</yellow></green>"

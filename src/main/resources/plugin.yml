@@ -1,0 +1,26 @@
+name: ModReq
+version: '1.0-SNAPSHOT'
+main: dev.bwmp.modReq.ModReq
+api-version: '1.21'
+load: STARTUP
+
+commands:
+  modreq:
+    description: Create mod requests and manage them
+    usage: /modreq <message> or /modreq <command> [args...]
+    aliases: [req, mr, ticket]
+  
+permissions:
+  modreq.use:
+    description: Allows basic ModReq usage (create requests)
+    default: true
+  modreq.mod:
+    description: Moderator permissions for ModReq
+    default: op
+    children:
+      modreq.use: true
+  modreq.admin:
+    description: Full ModReq administration
+    default: op
+    children:
+      modreq.mod: true
