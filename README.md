@@ -39,6 +39,7 @@ I kinda just wanted a more updated version of another modreq plugin i was using 
 | `modreq.use` | Create and manage own requests | All players |
 | `modreq.mod` | Staff commands (claim, done, etc.) | OP |
 | `modreq.admin` | Admin commands (force claim, reload) | OP |
+| `modreq.teleport` | Teleport command | modreq.mod |
 
 ## Interactive Features
 
