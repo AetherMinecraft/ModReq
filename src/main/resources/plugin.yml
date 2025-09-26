@@ -19,8 +19,12 @@ permissions:
     default: op
     children:
       modreq.use: true
+      modreq.teleport: true
   modreq.admin:
     description: Full ModReq administration
     default: op
     children:
       modreq.mod: true
+  modreq.teleport:
+    description: Allows teleporting to request locations
+    default: op

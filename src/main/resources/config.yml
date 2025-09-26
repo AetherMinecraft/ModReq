@@ -52,6 +52,6 @@ messages:
   request_already_claimed: "&cRequest #{id} is already claimed by {staff}"
   request_already_closed: "&cRequest #{id} is already closed"
   database_error: "&cA database error occurred. Please try again later."
-
+  
   # Modern MiniMessage format examples (you can use either style)
   # request_filed: "<green>Your mod request has been filed! Request ID: <yellow>#{id}</yellow></green>"

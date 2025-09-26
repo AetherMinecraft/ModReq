@@ -16,7 +16,7 @@ public class TeleportCommand extends SubCommand {
   private final ModReq plugin;
 
   public TeleportCommand(ModReq plugin) {
-    super("teleport", "modreq.mod", "Teleport to a mod request location", "/modreq teleport <id>", true);
+    super("teleport", "modreq.teleport", "Teleport to a mod request location", "/modreq teleport <id>", true);
     this.plugin = plugin;
   }
 

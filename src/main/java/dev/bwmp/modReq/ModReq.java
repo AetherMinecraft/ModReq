@@ -2,6 +2,7 @@ package dev.bwmp.modReq;
 
 import dev.bwmp.modReq.config.ConfigManager;
 import dev.bwmp.modReq.database.DatabaseManager;
+import dev.bwmp.modReq.events.PlayerJoin;
 import dev.bwmp.modReq.service.DiscordService;
 import dev.bwmp.modReq.service.ModRequestService;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,13 +13,13 @@ public final class ModReq extends JavaPlugin {
     private DatabaseManager databaseManager;
     private ModRequestService modRequestService;
     private DiscordService discordService;
-
+    public static ModReq instance;
     @Override
     public void onEnable() {
+        instance = this;
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "warn");
-
         this.configManager = new ConfigManager(this);
-
+        
         this.databaseManager = new DatabaseManager(this);
         try {
             this.databaseManager.initialize();
@@ -27,9 +28,10 @@ public final class ModReq extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-
+        
         this.modRequestService = new ModRequestService(this);
         this.discordService = new DiscordService(this);
+        registerEvents();
 
         ModReqCommand commandHandler = new ModReqCommand(this);
         getCommand("modreq").setExecutor(commandHandler);
@@ -48,6 +50,14 @@ public final class ModReq extends JavaPlugin {
         }
 
         getLogger().info("ModReq plugin has been disabled!");
+    }
+
+    public void registerEvents() {
+        this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+    }
+
+    public static ModReq getInstance() {
+        return instance;
     }
 
     public ConfigManager getConfigManager() {

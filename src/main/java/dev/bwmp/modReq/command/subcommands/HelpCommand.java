@@ -23,7 +23,7 @@ public class HelpCommand extends SubCommand {
     if (args.length == 0) {
 
       sender.sendMessage(TextUtil.highlight("=== ModReq Help ==="));
-      sender.sendMessage(TextUtil.format("&f/modreq <message> &7- Create a new mod request"));
+      sender.sendMessage(TextUtil.format("&f/modreq [message] &7- Create a new mod request"));
       sender.sendMessage(TextUtil.info("Available commands:"));
 
       for (SubCommand subCommand : subCommands.values()) {
@@ -32,11 +32,12 @@ public class HelpCommand extends SubCommand {
           continue;
         }
         if (subCommand.hasPermission(sender)) {
-          sender.sendMessage(TextUtil.format("&f/modreq " + subCommand.getName() + " &7- " + subCommand.getDescription()));
+          sender.sendMessage(
+              TextUtil.format("&f/modreq " + subCommand.getName() + " &7- " + subCommand.getDescription()));
         }
       }
 
-      sender.sendMessage(TextUtil.info("Use &f/modreq help <command> &7for detailed usage."));
+      sender.sendMessage(TextUtil.info("Use &f/modreq help [command] &7for detailed usage."));
       return true;
     }
 
